@@ -29,6 +29,23 @@ matcherView = {
 	},
 
 	addClickHandlers( fn, context ) {
+		$('.card').click( function(  ) {
+			console.log( $(this) );
+			fn.call( context, $(this).data('card-id'));
+		});
 	},
 
+	revealCard: function(id){
+		console.log('reveal');
+		$('#card-'+ id).addClass('revealed');
+	},
+
+
+	setCorrect: function(id){
+		$('#card-'+ id).addClass('correct');
+	},
+	
+	hideCards: function(id){
+		$('.card').not('.correct').removeClass('revealed');
+	},
 };
