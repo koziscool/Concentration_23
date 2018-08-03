@@ -26,17 +26,19 @@ matcherView = {
 	},
 
 	updateGameView: function() {
+		$('#game-state-info').text(this.model.gameStateText);
+		$('#num-guesses').text(this.model.numGuesses);
+		$('#matched-cards').text(this.model.matchedCards);
+		$('#total-cards').text(this.model.cards.length);
 	},
 
 	addClickHandlers( fn, context ) {
 		$('.card').click( function(  ) {
-			console.log( $(this) );
 			fn.call( context, $(this).data('card-id'));
 		});
 	},
 
 	revealCard: function(id){
-		console.log('reveal');
 		$('#card-'+ id).addClass('revealed');
 	},
 

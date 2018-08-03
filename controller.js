@@ -12,7 +12,6 @@ matcherController = {
 	},
 
 	selectCard: function(id){
-		console.log( "select " , id);
 		if( this.selecting || this.model.selectedSameCard(id) ) return;
 		this.selecting = true;
 		this.view.revealCard(id) ;

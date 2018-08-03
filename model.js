@@ -10,6 +10,10 @@ matcherModel = {
 
 	selectedCard: null,
 
+	numGuesses: 0,
+	matchedCards: 0,
+	gameStateText: "You haven't won yet, pick two cards.",
+
 	init: function(size){
 		this.size = size || this.size;
 		var numPairs = Math.pow( this.size, 2 ) / 2;
